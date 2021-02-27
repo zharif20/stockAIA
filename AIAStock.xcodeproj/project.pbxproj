@@ -33,6 +33,8 @@
 		38406B8F25EA45CE00D2EB00 /* SecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B8E25EA45CE00D2EB00 /* SecondPresenter.swift */; };
 		38863D6925EAAD410075F515 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D6825EAAD410075F515 /* API.swift */; };
 		38863D7225EAB43A0075F515 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D7125EAB43A0075F515 /* Price.swift */; };
+		38863D7F25EACE740075F515 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D7E25EACE740075F515 /* Storage.swift */; };
+		38863D8425EAD1100075F515 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D8325EAD1100075F515 /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		38406B8E25EA45CE00D2EB00 /* SecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPresenter.swift; sourceTree = "<group>"; };
 		38863D6825EAAD410075F515 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		38863D7125EAB43A0075F515 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		38863D7E25EACE740075F515 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		38863D8325EAD1100075F515 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			children = (
 				38406AF925EA2FFE00D2EB00 /* AppDelegate.swift */,
 				38406AFB25EA2FFE00D2EB00 /* SceneDelegate.swift */,
+				38863D7C25EACD5E0075F515 /* Util */,
 				38863D7025EAB42A0075F515 /* Model */,
 				38406B6F25EA44AE00D2EB00 /* API */,
 				38406B3525EA3B7F00D2EB00 /* ViewController */,
@@ -228,6 +233,15 @@
 				38863D7125EAB43A0075F515 /* Price.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		38863D7C25EACD5E0075F515 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				38863D7E25EACE740075F515 /* Storage.swift */,
+				38863D8325EAD1100075F515 /* Keychain.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38406AFE25EA2FFE00D2EB00 /* HomeViewController.swift in Sources */,
+				38863D7F25EACE740075F515 /* Storage.swift in Sources */,
 				38406B7B25EA459A00D2EB00 /* SecondModel.swift in Sources */,
 				38406AFA25EA2FFE00D2EB00 /* AppDelegate.swift in Sources */,
 				38406B8525EA45B000D2EB00 /* SecondWorker.swift in Sources */,
@@ -370,6 +385,7 @@
 				38406B6825EA41C300D2EB00 /* FirstInterfaces.swift in Sources */,
 				38863D7225EAB43A0075F515 /* Price.swift in Sources */,
 				38406B4725EA3F9500D2EB00 /* FirstModel.swift in Sources */,
+				38863D8425EAD1100075F515 /* Keychain.swift in Sources */,
 				38406B8A25EA45BC00D2EB00 /* SecondInteractor.swift in Sources */,
 				38406B3C25EA3BBF00D2EB00 /* SecondViewController.swift in Sources */,
 				38406B7125EA44CD00D2EB00 /* APIWorker.swift in Sources */,
