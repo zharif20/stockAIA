@@ -16,7 +16,7 @@ protocol SecondRoutingLogic {
 }
 
 protocol SecondWorkerLogic {
-    
+    func fetch(symbol: String, success: @escaping (SecondModel) -> Void, fail: @escaping (Error) -> Void)
 }
 
 protocol SecondDataStore {
@@ -24,13 +24,15 @@ protocol SecondDataStore {
 }
 
 protocol SecondBusinessLogic {
-    
+    func fetchItems(symbol: String)
 }
 
 protocol SecondPresentationLogic {
-    
+    func presentFetchResults(response: SecondModel)
+    func presentFetchError(error: Error)
 }
 
-protocol SecondDisplayLogic {
-    
+protocol SecondDisplayLogic: class {
+    func successFetchedItems(viewModel: SecondModel)
+    func errorFetchingItems(error: Error)
 }

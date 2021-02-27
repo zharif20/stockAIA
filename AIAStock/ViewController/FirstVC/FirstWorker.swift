@@ -18,7 +18,6 @@ class FirstWorker: FirstWorkerLogic {
             
             if let prices = result["Time Series (5min)"] as? NSDictionary{
                 guard let priceArray = prices as? [String: AnyObject] else { return }
-//                print("___p \(priceArray)")
                 for (key, value) in priceArray{
                     guard let open = value["1. open"] as? String else { return }
                     guard let high = value["2. high"] as? String else { return }

@@ -8,5 +8,9 @@
 import Foundation
 
 struct SecondModel {
+    var companyStockPrice = [Price]()
     
+    init(prices: [Price]){
+        companyStockPrice = prices
+    }
 }

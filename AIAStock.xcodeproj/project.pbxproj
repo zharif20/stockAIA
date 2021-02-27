@@ -194,8 +194,8 @@
 		38406B5F25EA40C100D2EB00 /* SecondVC */ = {
 			isa = PBXGroup;
 			children = (
-				38406B3B25EA3BBF00D2EB00 /* SecondViewController.swift */,
 				38406B7525EA458E00D2EB00 /* SecondInterfaces.swift */,
+				38406B3B25EA3BBF00D2EB00 /* SecondViewController.swift */,
 				38406B7A25EA459A00D2EB00 /* SecondModel.swift */,
 				38406B7F25EA45A500D2EB00 /* SecondRouter.swift */,
 				38406B8425EA45B000D2EB00 /* SecondWorker.swift */,

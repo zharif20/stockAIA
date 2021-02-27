@@ -30,4 +30,23 @@ public class APIWorker {
             }
         }
     }
+    
+    public static func fetchDailyAdjusted(symbol: String = "IBM", success: @escaping (AnyObject) -> Void, fail: @escaping (Error) -> Void) {
+        let apiKey = "GACKQN6MJLZNACFL"
+        API.request(urlEndpoint: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=\(symbol)&apikey=\(apiKey)") { result in
+            switch result {
+            case .success(let data):
+                do {
+                    if let data = data as? Data {
+                        let json = try JSONSerialization.jsonObject(with: data, options: []) as AnyObject
+                        success(json)
+                    }
+                } catch let error {
+                    fail(error)
+                }
+            case .failure(let error):
+                fail(error)
+            }
+        }
+    }
 }

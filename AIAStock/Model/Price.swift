@@ -14,13 +14,19 @@ struct Price {
     let dailyLow: Double
     let dailyClose: Double
     let dailyVolume: Int
+    let adjustedClose: Double?
+    let dividenAmount: Double?
+    let splitCoefficient: Double?
     
-    init(date: String, open: Double, high: Double, low: Double, close: Double, volume: Int){
+    init(date: String, open: Double, high: Double, low: Double, close: Double, volume: Int, adjClose: Double? = nil, divAmount: Double? = nil, splitCoef: Double? = nil){
         dailyDate = date
         dailyOpen = open
         dailyHigh = high
         dailyLow = low
         dailyClose = close
         dailyVolume = volume
+        adjustedClose = adjClose
+        dividenAmount = divAmount
+        splitCoefficient = splitCoef
     }
 }
