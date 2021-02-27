@@ -7,47 +7,27 @@
 
 import Foundation
 
-public enum ErrorType: Error {
-    case undefined
-}
-
-public enum Result<T> {
-    case success(T)
-    case failure(Error)
-}
-
 public class APIWorker {
-    
-    // MARK: - Properties
-    
-    public init() {}
     
     // MARK: - Methods
     
-    public static func request(urlEndpoint: String, onResult: @escaping (Result<Any>) -> Void) {
-        guard let url = URL(string: urlEndpoint) else { return }
-
-        var dataTask: URLSessionDataTask?
-        let defaultSession = URLSession(configuration: .default)
-        
-        dataTask?.cancel()
-        
-        dataTask = defaultSession.dataTask(with: url, completionHandler: { (data, response, error) in
-
-            if let error = error {
-                onResult(.failure(error))
-            } else if
-                let data = data,
-                let response = response as? HTTPURLResponse,
-                response.statusCode == 200 {
-                DispatchQueue.main.async {
-                    onResult(.success(data))
+    public static func fetchIntraDay(symbol: String = "IBM", success: @escaping (AnyObject) -> Void, fail: @escaping (Error) -> Void) {
+        let interval = "5min"
+        let apiKey = "GACKQN6MJLZNACFL"
+        API.request(urlEndpoint: "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=\(symbol)&interval=\(interval)&apikey=\(apiKey)") { result in
+            switch result {
+            case .success(let data):
+                do {
+                    if let data = data as? Data {
+                        let json = try JSONSerialization.jsonObject(with: data, options: []) as AnyObject
+                        success(json)
+                    }
+                } catch let error {
+                    fail(error)
                 }
-            } else {
-                onResult(.success(ErrorType.undefined))
+            case .failure(let error):
+                fail(error)
             }
-        })
-        
-        dataTask?.resume()
+        }
     }
 }

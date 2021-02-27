@@ -31,6 +31,8 @@
 		38406B8525EA45B000D2EB00 /* SecondWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B8425EA45B000D2EB00 /* SecondWorker.swift */; };
 		38406B8A25EA45BC00D2EB00 /* SecondInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B8925EA45BC00D2EB00 /* SecondInteractor.swift */; };
 		38406B8F25EA45CE00D2EB00 /* SecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B8E25EA45CE00D2EB00 /* SecondPresenter.swift */; };
+		38863D6925EAAD410075F515 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D6825EAAD410075F515 /* API.swift */; };
+		38863D7225EAB43A0075F515 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D7125EAB43A0075F515 /* Price.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		38406B8425EA45B000D2EB00 /* SecondWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWorker.swift; sourceTree = "<group>"; };
 		38406B8925EA45BC00D2EB00 /* SecondInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInteractor.swift; sourceTree = "<group>"; };
 		38406B8E25EA45CE00D2EB00 /* SecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPresenter.swift; sourceTree = "<group>"; };
+		38863D6825EAAD410075F515 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		38863D7125EAB43A0075F515 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 			children = (
 				38406AF925EA2FFE00D2EB00 /* AppDelegate.swift */,
 				38406AFB25EA2FFE00D2EB00 /* SceneDelegate.swift */,
+				38863D7025EAB42A0075F515 /* Model */,
 				38406B6F25EA44AE00D2EB00 /* API */,
 				38406B3525EA3B7F00D2EB00 /* ViewController */,
 				38406AFF25EA2FFE00D2EB00 /* Main.storyboard */,
@@ -211,9 +216,18 @@
 		38406B6F25EA44AE00D2EB00 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				38863D6825EAAD410075F515 /* API.swift */,
 				38406B7025EA44CD00D2EB00 /* APIWorker.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		38863D7025EAB42A0075F515 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38863D7125EAB43A0075F515 /* Price.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,12 +368,14 @@
 				38406AFC25EA2FFE00D2EB00 /* SceneDelegate.swift in Sources */,
 				38406B8F25EA45CE00D2EB00 /* SecondPresenter.swift in Sources */,
 				38406B6825EA41C300D2EB00 /* FirstInterfaces.swift in Sources */,
+				38863D7225EAB43A0075F515 /* Price.swift in Sources */,
 				38406B4725EA3F9500D2EB00 /* FirstModel.swift in Sources */,
 				38406B8A25EA45BC00D2EB00 /* SecondInteractor.swift in Sources */,
 				38406B3C25EA3BBF00D2EB00 /* SecondViewController.swift in Sources */,
 				38406B7125EA44CD00D2EB00 /* APIWorker.swift in Sources */,
 				38406B4C25EA3FB900D2EB00 /* FirstRouter.swift in Sources */,
 				38406B8025EA45A500D2EB00 /* SecondRouter.swift in Sources */,
+				38863D6925EAAD410075F515 /* API.swift in Sources */,
 				38406B5625EA3FDD00D2EB00 /* FirstInteractor.swift in Sources */,
 				38406B4125EA3BCD00D2EB00 /* ThirdViewController.swift in Sources */,
 				38406B5B25EA3FFD00D2EB00 /* FirstPresenter.swift in Sources */,

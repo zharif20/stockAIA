@@ -9,4 +9,14 @@ import Foundation
 
 class FirstPresenter: FirstPresentationLogic {
     
+    weak var viewController: FirstDisplayLogic?
+
+    func presentFetchResults(response: FirstModel) {
+        viewController?.successFetchedItems(viewModel: response)
+    }
+    
+    func presentFetchError(error: Error) {
+        viewController?.errorFetchingItems(error: error)
+    }
+    
 }
