@@ -43,6 +43,8 @@ class FirstViewController: UIViewController {
     // MARK: Setup
     
     private func setup() {
+        title = "Intraday"
+
         let viewController = self
         let interactor = FirstInteractor()
         let presenter = FirstPresenter()
@@ -92,7 +94,12 @@ extension FirstViewController: FirstDisplayLogic {
     }
     
     func errorFetchingItems(error: Error) {
-        print(error.localizedDescription)
+        let alert = UIAlertController(title: "Error!",
+                                      message: error.localizedDescription,
+                                      preferredStyle: .alert)
+        let confirm = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(confirm)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -141,7 +148,12 @@ extension FirstViewController: UISearchBarDelegate {
         if let text = searchBar.text, text.count == 3 {
             interactor?.fetchItems(symbol: text)
         } else {
-            print("Max/min symbol 3")
+            let alert = UIAlertController(title: "Error!",
+                                          message: "Max/min symbol 3",
+                                          preferredStyle: .alert)
+            let confirm = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(confirm)
+            present(alert, animated: true, completion: nil)
         }
     }
 }

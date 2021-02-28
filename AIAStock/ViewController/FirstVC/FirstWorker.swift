@@ -13,10 +13,11 @@ class FirstWorker: FirstWorkerLogic {
         let dateFormater = DateFormatter()
         
         dateFormater.dateFormat = "yyyy/MM/dd"
+        let interval: String = Storage.loadItem(key: .interval) ?? "5min"
 
         APIWorker.fetchIntraDay(symbol: symbol) { result in
             
-            if let prices = result["Time Series (5min)"] as? NSDictionary{
+            if let prices = result["Time Series (\(interval))"] as? NSDictionary{
                 guard let priceArray = prices as? [String: AnyObject] else { return }
                 for (key, value) in priceArray{
                     guard let open = value["1. open"] as? String else { return }

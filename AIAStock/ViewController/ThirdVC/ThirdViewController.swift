@@ -10,7 +10,16 @@ import UIKit
 class ThirdViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet var intervalSegment: UISegmentedControl!
+    @IBOutlet var outputSizeSegment: UISegmentedControl!
+    @IBOutlet var apiKeyTextField: UITextField!
+    
+    let intervalItems = ["1min", "5min", "15min", "30min", "60min"]
+    let outputSizeItems = ["compact", "full"]
+
+    var intervalValue: String?
+    var outputValue: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,24 +27,46 @@ class ThirdViewController: UIViewController {
     }
     
     private func setupView() {
-        tableView.backgroundColor = .white
-        tableView.delegate = self
-        tableView.dataSource = self
+        title = "Configuration"
+        
+        apiKeyTextField.delegate = self
+        
+        let interval = Storage.loadItem(key: .interval)
+        let indexInterval = intervalItems.firstIndex(where: { $0 == interval })
+        intervalSegment.selectedSegmentIndex = indexInterval ?? 0
+        
+        let outputSize = Storage.loadItem(key: .outputSize)
+        let indexOutputSize = outputSizeItems.firstIndex(where: { $0 == outputSize })
+        outputSizeSegment.selectedSegmentIndex = indexOutputSize ?? 0
+        
+        let apiKey = Keychain.load(key: .apiKey)
+        let key = apiKey?.to(type: String.self) ?? "GACKQN6MJLZNACFL"
+        apiKeyTextField.text = key
     }
 
+    @IBAction func segmentChangeValue(_ sender: UISegmentedControl) {
+        switch sender {
+        case intervalSegment:
+            intervalValue = intervalItems[sender.selectedSegmentIndex]
+        case outputSizeSegment:
+            outputValue = outputSizeItems[sender.selectedSegmentIndex]
+        default:
+            break
+        }
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        let data = Data(from: apiKeyTextField.text)
+        Keychain.save(key: .apiKey, data: data)
+
+        Storage.saveItem(value: intervalValue ?? "1min", key: .interval)
+        Storage.saveItem(value: outputValue ?? "compact", key: .outputSize)
+        navigationController?.popViewController(animated: true)
+    }
 }
 
-extension ThirdViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+extension ThirdViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        apiKeyTextField.text = textField.text
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "apiCell", for: indexPath)
-        
-        
-        return cell
-    }
-    
-    
 }

@@ -12,9 +12,10 @@ public class APIWorker {
     // MARK: - Methods
     
     public static func fetchIntraDay(symbol: String = "IBM", success: @escaping (AnyObject) -> Void, fail: @escaping (Error) -> Void) {
-        let interval = "5min"
-        let apiKey = "GACKQN6MJLZNACFL"
-        API.request(urlEndpoint: "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=\(symbol)&interval=\(interval)&apikey=\(apiKey)") { result in
+        let interval: String = Storage.loadItem(key: .interval) ?? "5min"
+        let outputSize: String = Storage.loadItem(key: .outputSize) ?? "compact"
+
+        API.request(urlEndpoint: "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=\(symbol)&interval=\(interval)&outputsize=\(outputSize)") { result in
             switch result {
             case .success(let data):
                 do {
@@ -32,8 +33,9 @@ public class APIWorker {
     }
     
     public static func fetchDailyAdjusted(symbol: String = "IBM", success: @escaping (AnyObject) -> Void, fail: @escaping (Error) -> Void) {
-        let apiKey = "GACKQN6MJLZNACFL"
-        API.request(urlEndpoint: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=\(symbol)&apikey=\(apiKey)") { result in
+        let outputSize: String = Storage.loadItem(key: .outputSize) ?? "compact"
+
+        API.request(urlEndpoint: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=\(symbol)&outputsize=\(outputSize)") { result in
             switch result {
             case .success(let data):
                 do {

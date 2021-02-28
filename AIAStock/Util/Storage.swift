@@ -20,12 +20,12 @@ public class Storage {
         prefs.synchronize()
     }
     
-    public static func loadItem(key: StorageKey) -> String {
+    public static func loadItem(key: StorageKey) -> String? {
         let prefs = UserDefaults.standard
 
         if let value = prefs.string(forKey: key.rawValue) {
             return value
         }
-        return "Undefined"
+        return nil
     }
 }

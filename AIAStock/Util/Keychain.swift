@@ -7,23 +7,25 @@
 
 import Foundation
 
+enum KeychainKey: String {
+    case apiKey = "apiKey"
+}
+
 class Keychain {
 
-    class func save(key: String, data: Data) -> OSStatus {
+    class func save(key: KeychainKey, data: Data) {
         let query = [
             kSecClass as String       : kSecClassGenericPassword as String,
-            kSecAttrAccount as String : key,
+            kSecAttrAccount as String : key.rawValue,
             kSecValueData as String   : data ] as [String : Any]
         
         SecItemDelete(query as CFDictionary)
-        
-        return SecItemAdd(query as CFDictionary, nil)
     }
     
-    class func load(key: String) -> Data? {
+    class func load(key: KeychainKey) -> Data? {
         let query = [
             kSecClass as String       : kSecClassGenericPassword,
-            kSecAttrAccount as String : key,
+            kSecAttrAccount as String : key.rawValue,
             kSecReturnData as String  : kCFBooleanTrue!,
             kSecMatchLimit as String  : kSecMatchLimitOne ] as [String : Any]
         
