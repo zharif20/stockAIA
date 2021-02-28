@@ -31,10 +31,13 @@
 		38406B8525EA45B000D2EB00 /* SecondWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B8425EA45B000D2EB00 /* SecondWorker.swift */; };
 		38406B8A25EA45BC00D2EB00 /* SecondInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B8925EA45BC00D2EB00 /* SecondInteractor.swift */; };
 		38406B8F25EA45CE00D2EB00 /* SecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B8E25EA45CE00D2EB00 /* SecondPresenter.swift */; };
+		384AFC3D25EB7B6200352DBB /* HeaderIntraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384AFC3B25EB7B6200352DBB /* HeaderIntraTableViewCell.swift */; };
+		384AFC3E25EB7B6200352DBB /* HeaderIntraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 384AFC3C25EB7B6200352DBB /* HeaderIntraTableViewCell.xib */; };
 		38863D6925EAAD410075F515 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D6825EAAD410075F515 /* API.swift */; };
 		38863D7225EAB43A0075F515 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D7125EAB43A0075F515 /* Price.swift */; };
 		38863D7F25EACE740075F515 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D7E25EACE740075F515 /* Storage.swift */; };
 		38863D8425EAD1100075F515 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D8325EAD1100075F515 /* Keychain.swift */; };
+		38863D9025EB5FF00075F515 /* IntraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38863D8F25EB5FF00075F515 /* IntraTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,10 +88,13 @@
 		38406B8425EA45B000D2EB00 /* SecondWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWorker.swift; sourceTree = "<group>"; };
 		38406B8925EA45BC00D2EB00 /* SecondInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInteractor.swift; sourceTree = "<group>"; };
 		38406B8E25EA45CE00D2EB00 /* SecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPresenter.swift; sourceTree = "<group>"; };
+		384AFC3B25EB7B6200352DBB /* HeaderIntraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderIntraTableViewCell.swift; sourceTree = "<group>"; };
+		384AFC3C25EB7B6200352DBB /* HeaderIntraTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderIntraTableViewCell.xib; sourceTree = "<group>"; };
 		38863D6825EAAD410075F515 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		38863D7125EAB43A0075F515 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		38863D7E25EACE740075F515 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		38863D8325EAD1100075F515 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		38863D8F25EB5FF00075F515 /* IntraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntraTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,7 @@
 		38406B4525EA3F6100D2EB00 /* FirstVC */ = {
 			isa = PBXGroup;
 			children = (
+				38863D8E25EB5FCD0075F515 /* Cell */,
 				38406B6725EA41C300D2EB00 /* FirstInterfaces.swift */,
 				38406B3625EA3BB000D2EB00 /* FirstViewController.swift */,
 				38406B4625EA3F9500D2EB00 /* FirstModel.swift */,
@@ -227,6 +234,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		384AFC3A25EB7B4B00352DBB /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				384AFC3B25EB7B6200352DBB /* HeaderIntraTableViewCell.swift */,
+				384AFC3C25EB7B6200352DBB /* HeaderIntraTableViewCell.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		38863D7025EAB42A0075F515 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +258,15 @@
 				38863D8325EAD1100075F515 /* Keychain.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		38863D8E25EB5FCD0075F515 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				384AFC3A25EB7B4B00352DBB /* Header */,
+				38863D8F25EB5FF00075F515 /* IntraTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +375,7 @@
 				38406B0625EA300800D2EB00 /* LaunchScreen.storyboard in Resources */,
 				38406B0325EA300800D2EB00 /* Assets.xcassets in Resources */,
 				38406B0125EA2FFE00D2EB00 /* Main.storyboard in Resources */,
+				384AFC3E25EB7B6200352DBB /* HeaderIntraTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +404,7 @@
 				38863D7F25EACE740075F515 /* Storage.swift in Sources */,
 				38406B7B25EA459A00D2EB00 /* SecondModel.swift in Sources */,
 				38406AFA25EA2FFE00D2EB00 /* AppDelegate.swift in Sources */,
+				38863D9025EB5FF00075F515 /* IntraTableViewCell.swift in Sources */,
 				38406B8525EA45B000D2EB00 /* SecondWorker.swift in Sources */,
 				38406B5125EA3FCA00D2EB00 /* FirstWorker.swift in Sources */,
 				38406AFC25EA2FFE00D2EB00 /* SceneDelegate.swift in Sources */,
@@ -394,6 +421,7 @@
 				38863D6925EAAD410075F515 /* API.swift in Sources */,
 				38406B5625EA3FDD00D2EB00 /* FirstInteractor.swift in Sources */,
 				38406B4125EA3BCD00D2EB00 /* ThirdViewController.swift in Sources */,
+				384AFC3D25EB7B6200352DBB /* HeaderIntraTableViewCell.swift in Sources */,
 				38406B5B25EA3FFD00D2EB00 /* FirstPresenter.swift in Sources */,
 				38406B3725EA3BB000D2EB00 /* FirstViewController.swift in Sources */,
 				38406B7625EA458E00D2EB00 /* SecondInterfaces.swift in Sources */,
