@@ -101,7 +101,6 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        print(symbols)
         if section < fetchSymbols.count {
             return fetchSymbols[section].uppercased()
         }
