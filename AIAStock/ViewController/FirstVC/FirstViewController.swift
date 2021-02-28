@@ -88,7 +88,6 @@ class FirstViewController: UIViewController {
 
 extension FirstViewController: FirstDisplayLogic {
     func successFetchedItems(viewModel: FirstModel) {
-        print(viewModel)
         self.viewModel = viewModel
         self.tableView.reloadData()
     }

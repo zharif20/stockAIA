@@ -59,7 +59,7 @@ class ThirdViewController: UIViewController {
         let data = Data(from: apiKeyTextField.text)
         Keychain.save(key: .apiKey, data: data)
 
-        Storage.saveItem(value: intervalValue ?? "1min", key: .interval)
+        Storage.saveItem(value: intervalValue ?? "5min", key: .interval)
         Storage.saveItem(value: outputValue ?? "compact", key: .outputSize)
         navigationController?.popViewController(animated: true)
     }

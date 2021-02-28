@@ -42,7 +42,7 @@ class SecondWorker: SecondWorkerLogic {
                 finalArray.append(Price(date: data[0], open: Double(data[1])!, high: Double(data[2])!, low: Double(data[3])!, close: Double(data[4])!, volume: Int(data[6])!, adjClose: Double(data[5])!, divAmount: Double(data[7])!, splitCoef: Double(data[8])!))
             }
             
-            success(SecondModel(prices: finalArray))
+            success(SecondModel(symbol: symbol, prices: finalArray))
             
         } fail: { error in
             fail(error)

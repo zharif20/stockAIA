@@ -8,9 +8,11 @@
 import Foundation
 
 struct SecondModel {
+    let companySymbol: String
     var companyStockPrice = [Price]()
     
-    init(prices: [Price]){
+    init(symbol: String, prices: [Price]){
+        companySymbol = symbol
         companyStockPrice = prices
     }
 }

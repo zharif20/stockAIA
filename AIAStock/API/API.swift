@@ -26,12 +26,10 @@ public class API {
     public static func request(urlEndpoint: String, onResult: @escaping (Result<Any>) -> Void) {
         let key = Keychain.load(key: .apiKey)
         let apiKey = key?.to(type: String.self) ?? "GACKQN6MJLZNACFL"
-        print("aa \(apiKey)")
         let urlAppend = "\(urlEndpoint)&apikey=\(apiKey)"
         guard let myURL = urlAppend.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else { return }
         guard let url = URL(string: myURL) else { return }
         
-        print("url \(myURL)")
         var dataTask: URLSessionDataTask?
         let defaultSession = URLSession(configuration: .default)
         
