@@ -13,7 +13,6 @@
 		38406B0125EA2FFE00D2EB00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38406AFF25EA2FFE00D2EB00 /* Main.storyboard */; };
 		38406B0325EA300800D2EB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38406B0225EA300800D2EB00 /* Assets.xcassets */; };
 		38406B0625EA300800D2EB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38406B0425EA300800D2EB00 /* LaunchScreen.storyboard */; };
-		38406B1125EA300900D2EB00 /* AIAStockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B1025EA300900D2EB00 /* AIAStockTests.swift */; };
 		38406B1C25EA300900D2EB00 /* AIAStockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B1B25EA300900D2EB00 /* AIAStockUITests.swift */; };
 		38406B3725EA3BB000D2EB00 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B3625EA3BB000D2EB00 /* FirstViewController.swift */; };
 		38406B3C25EA3BBF00D2EB00 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38406B3B25EA3BBF00D2EB00 /* SecondViewController.swift */; };
@@ -69,7 +68,6 @@
 		38406B0525EA300800D2EB00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38406B0725EA300800D2EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38406B0C25EA300900D2EB00 /* AIAStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIAStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		38406B1025EA300900D2EB00 /* AIAStockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAStockTests.swift; sourceTree = "<group>"; };
 		38406B1225EA300900D2EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38406B1725EA300900D2EB00 /* AIAStockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIAStockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38406B1B25EA300900D2EB00 /* AIAStockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAStockUITests.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 		38406B0F25EA300900D2EB00 /* AIAStockTests */ = {
 			isa = PBXGroup;
 			children = (
-				38406B1025EA300900D2EB00 /* AIAStockTests.swift */,
 				38406B1225EA300900D2EB00 /* Info.plist */,
 				384AFC5025EC12D200352DBB /* AIAStockAPITests.swift */,
 			);
@@ -447,7 +444,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38406B1125EA300900D2EB00 /* AIAStockTests.swift in Sources */,
 				384AFC5125EC12D200352DBB /* AIAStockAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
